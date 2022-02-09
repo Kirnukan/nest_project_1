@@ -1,19 +1,20 @@
 {
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/lesson-8/src",
   "monorepo": true,
-  "root": "apps/main",
-  "sourceRoot": "apps/main/src",
+  "root": "apps/lesson-8",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/main/tsconfig.app.json"
+    "tsConfigPath": "apps/lesson-8/tsconfig.app.json"
   },
   "projects": {
-    "main": {
+    "lesson-8": {
       "type": "application",
-      "root": "apps/main",
+      "root": "apps/lesson-8",
       "entryFile": "main",
-      "sourceRoot": "apps/main/src",
+      "sourceRoot": "apps/lesson-8/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/main/tsconfig.app.json"
+        "tsConfigPath": "apps/lesson-8/tsconfig.app.json"
       }
     },
     "gateway": {
@@ -34,15 +35,6 @@
         "tsConfigPath": "apps/administration/tsconfig.app.json"
       }
     },
-    "notification": {
-      "type": "application",
-      "root": "apps/notification",
-      "entryFile": "main",
-      "sourceRoot": "apps/notification/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/notification/tsconfig.app.json"
-      }
-    },
     "market": {
       "type": "application",
       "root": "apps/market",
@@ -50,6 +42,15 @@
       "sourceRoot": "apps/market/src",
       "compilerOptions": {
         "tsConfigPath": "apps/market/tsconfig.app.json"
+      }
+    },
+    "notification": {
+      "type": "application",
+      "root": "apps/notification",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification/tsconfig.app.json"
       }
     }
   }
