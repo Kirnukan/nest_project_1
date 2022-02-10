@@ -23,3 +23,28 @@ services:
        ALLOW_PLAINTEXT_LISTENER: yes
     depends_on:
       - zookeeper
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - '5555:5432'
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    restart: always
+  administation:
+    build:
+      context: ./administraion
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8000'
+    restart: always
+    depends_on:
+      - db
+
