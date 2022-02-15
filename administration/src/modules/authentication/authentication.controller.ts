@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices'
 import { LoginData } from './interfaces/loginData.interface';
+import { RegistrationData } from './interfaces/registrationData.interface';
 
 @Controller('authentication')
 export class AuthenticationController {
@@ -17,7 +18,11 @@ export class AuthenticationController {
   authenticationService: AuthenticationService;
 
   @MessagePattern('administration.login')
-  login( @Payload() loginData: LoginData ) {
+  async login( @Payload() loginData: LoginData ) {
     return this.authenticationService.authenticator(loginData)
+  }
+  @MessagePattern('administration.register')
+  async register( @Payload() registrationData: RegistrationData ) {
+    return this.authenticationService.registration(registrationData)
   }
 }

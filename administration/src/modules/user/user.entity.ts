@@ -10,14 +10,14 @@ export class UsersEntity extends BaseEntity {
     nullable: false,
     unique: true,
   })
-  email!: string;
+  login!: string;
 
   @Column({
-    type: 'numeric',
+    type: 'varchar',
     nullable: false,
     unique: true,
   })
-  phone!: number;
+  phone!: string;
 
   @Column({
     type: 'varchar',
@@ -30,6 +30,12 @@ export class UsersEntity extends BaseEntity {
     nullable: false,
   })
   lastName!: string;
+
+  @Column({
+    type: 'varchar',
+    nullable: false,
+  })
+  middleName!: string;
 
   @Column({
     type: 'varchar',
