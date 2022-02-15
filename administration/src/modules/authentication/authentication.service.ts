@@ -56,12 +56,12 @@ export class AuthenticationService {
     });
 
     if (!userExistence) {
-      throw new HttpException("Wrong user's data", HttpStatus.UNAUTHORIZED);
+      throw new HttpException('Wrong user\'s data', HttpStatus.UNAUTHORIZED);
     } else {
       const verifyPassword = bcrypt.compare(dto.value.password, userExistence.password);
 
       if (!verifyPassword) {
-        throw new HttpException("Wrong user's data", HttpStatus.UNAUTHORIZED);
+        throw new HttpException('Wrong user\'s data', HttpStatus.UNAUTHORIZED);
       } else {
         return {
           user: userExistence,

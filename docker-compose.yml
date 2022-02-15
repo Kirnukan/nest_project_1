@@ -48,3 +48,13 @@ services:
     depends_on:
       - db
 
+  notification:
+    build:
+      context: ./notification
+      dockerfile: Dockerfile
+    ports:
+      - '8002:8000'
+    restart: always
+    depends_on:
+      - db
+

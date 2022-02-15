@@ -1,5 +1,5 @@
-import { Injectable } from "@nestjs/common";
-import { NotificationInterface } from "./interfaces/notification.interface";
+import { Injectable } from '@nestjs/common';
+import { NotificationInterface } from './interfaces/notification.interface';
 
 @Injectable()
 export class NotificationService {
