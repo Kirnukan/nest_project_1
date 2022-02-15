@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices'
-import { getConnection } from 'typeorm';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
@@ -17,6 +16,5 @@ async function bootstrap() {
   });
   await app.init();
   await app.listen();
-  await getConnection().runMigrations();
 }
 bootstrap();
